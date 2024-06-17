@@ -8,4 +8,4 @@ function PageComandas() {
   )
 }
 
-export default PageComandas
+export default PageComandasx

@@ -2,7 +2,9 @@ import React from 'react'
 
 function PageMenu() {
   return (
-    <div>PageMenu</div>
+    <div>
+      <p>PageMenu</p>
+    </div>
   )
 }
 

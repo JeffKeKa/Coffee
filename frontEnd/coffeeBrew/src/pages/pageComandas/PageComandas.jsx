@@ -2,7 +2,9 @@ import React from 'react'
 
 function PageComandas() {
   return (
-    <div>PageComandas</div>
+    <div>
+      <p>PageComandas</p>
+    </div>
   )
 }
 

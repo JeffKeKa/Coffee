@@ -1,0 +1,71 @@
+.conteinerPageInicial {
+  height: 100vh;
+  width: 100vw;
+  background-color: bisque;
+
+  display: flex;
+  flex-direction: row;
+}
+.barraLateralPageInicial {
+  height: 100%;
+  min-height: 12pt;
+  width: 20%;
+  max-width: 200pt;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #692a12;
+}
+
+.botoesPageInicial {
+  width: 90%;
+  max-width: 100pt;
+  min-width: 80pt;
+  height: 5%;
+  min-height: 12pt;
+
+  margin: 0;
+  border-radius: 0;
+  padding: 0;
+
+  border: none;
+  color: #fff;
+  background-image: linear-gradient(30deg, #5d2410, #e05b22);
+  border-radius: 10px;
+  background-size: 100% auto;
+  font-family: inherit;
+  font-size: 20px;
+  padding: 0.6em 1.5em;
+  margin: 2%;
+}
+.botoesPageInicial {
+  border: none;
+  border-radius: 10px;
+  padding: 0.6em 1.5em;
+  color: #fff;
+  background-image: linear-gradient(30deg, #5d2410, #e05b22);
+  background-size: 100% auto;
+  font-family: inherit;
+  font-size: 20px;
+}
+.botoesPageInicial:hover {
+  background-position: right center;
+  background-size: 200% auto;
+  -webkit-animation: pulse 2s infinite;
+  animation: pulse512 1.5s infinite;
+}
+.direitaPageInicial {
+  width: 90%;
+  height: 90%;
+
+  margin: 10pt;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+
+  border-radius: 40px;
+  background-color: #f4f0ee;
+  /* position: relative; */
+}

@@ -4,9 +4,9 @@ function PageComandas() {
   return (
     <div className="pageComandas">
       <section className="barraLateralPageComandas">
-        <form className="formulario">
+        <form className="formularioPageComanda">
           <label className="labelAddproduto">Informe numero da comanda:</label>
-          <input type="text" name="inputComanda" required />
+          <input className="inputComanda" type="text" name="inputComanda" required />
           <button className="BotaoCadastrarProduto" type="submit">
             Confirmar
           </button>

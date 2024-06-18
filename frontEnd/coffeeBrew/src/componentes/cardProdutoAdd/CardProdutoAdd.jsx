@@ -64,9 +64,10 @@ const CardProdutoAdd = () => {
       </div>
       <div className="formAddProduto">
        <h2>Cadastrar Produto</h2>
-        <form className="formulario" onSubmit={handleSubmit}>
+        <form className="formularioProdutoAdd" onSubmit={handleSubmit}>
          <label className="labelAddproduto">Nome:</label>
          <input
+         className="inputFormAddProduto"
            type="text"
            name="nome"
            value={produto.nome}
@@ -86,6 +87,7 @@ const CardProdutoAdd = () => {
         
          <label className="labelAddproduto">Descrição:</label>
          <textarea
+         className="inputFormAddProduto"
            name="descricao"
            value={produto.descricao}
            onChange={handleChange}

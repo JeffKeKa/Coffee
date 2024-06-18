@@ -1,14 +1,34 @@
-import React from 'react'
-
+import React, { useState } from "react";
+import './pageComandas.css'
 function PageComandas() {
   return (
-    <div>
-      <p>PageComandas
+    <div className="pageComandas">
+      <section className="barraLateralPageComandas">
+        <form className="formulario">
+          <label className="labelAddproduto">Informe numero da comanda:</label>
+          <input type="text" name="inputComanda" required />
+          <button className="BotaoCadastrarProduto" type="submit">
+            Confirmar
+          </button>
+        </form>
+      </section>
 
-      
-      </p>
+      <section>
+        <table>
+          <tr>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>preço</th>
+          </tr>
+          <tr>
+            <td>Produto vindo do back</td>
+            <td>Quantidade vindo do beck</td>
+            <td>preço do back</td>
+          </tr>
+        </table>
+      </section>
     </div>
-  )
+  );
 }
 
-export default PageComandas
+export default PageComandas;

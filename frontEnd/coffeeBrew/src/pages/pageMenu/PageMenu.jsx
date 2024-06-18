@@ -1,8 +1,7 @@
 import React from "react";
-import "./pageMenu.css";
 import MenuLateral from "../../componentes/menuLateral/MenuLateral";
+import "./pageMenu.css";
 import CardProduto from "../../componentes/cardProduto/CardProduto";
-
 function PageMenu() {
   return (
     <div className="MenuTotal">

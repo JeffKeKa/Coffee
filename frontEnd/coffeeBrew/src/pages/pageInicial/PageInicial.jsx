@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import "./pageInicial.css";
 import { useState } from "react";
 import CardProdutoAdd from "../../componentes/cardProdutoAdd/CardProdutoAdd";
-
+import CardClienteAdd from "../../componentes/cardClienteAdd/CardClienteAdd";
 function PageInicial() {
     const [index, setIndex] = useState(0);
 
@@ -30,10 +30,10 @@ function PageInicial() {
         <Link to="/Menu" className="botoesPageInicial">
           Menu
         </Link>
-        <Link to="/comanda" className="botoesPageInicial">
+        <Link to="/comandas" className="botoesPageInicial">
           Pagamento
         </Link>
-        <Link to="/comanda" className="botoesPageInicial">
+        <Link to="/comandas" className="botoesPageInicial">
           Comanda
         </Link>
       </div>
@@ -51,7 +51,10 @@ function PageInicial() {
         </div>
 
       </div> */}
-      <CardProdutoAdd />
+
+      {/* <CardProdutoAdd /> */}
+
+      <CardClienteAdd />
     </div>
   );
 }

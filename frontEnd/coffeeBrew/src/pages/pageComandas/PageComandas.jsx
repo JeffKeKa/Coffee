@@ -3,7 +3,10 @@ import React from 'react'
 function PageComandas() {
   return (
     <div>
-      <p>PageComandas</p>
+      <p>PageComandas
+
+      
+      </p>
     </div>
   )
 }

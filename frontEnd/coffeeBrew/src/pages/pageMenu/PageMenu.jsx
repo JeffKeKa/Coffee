@@ -1,8 +1,8 @@
 import React from "react";
-import MenuLateral from "../../componentes/menuLateral/MenuLateral";
-
 import "./pageMenu.css";
+import MenuLateral from "../../componentes/menuLateral/MenuLateral";
 import CardProduto from "../../componentes/cardProduto/CardProduto";
+
 function PageMenu() {
   return (
     <div className="MenuTotal">
@@ -12,9 +12,7 @@ function PageMenu() {
       <div className="menuCardPageMenu">
         <CardProduto></CardProduto>
         <CardProduto></CardProduto>
-        <CardProduto></CardProduto>
-        <CardProduto></CardProduto>
-        <CardProduto></CardProduto>
+      
        
       </div>
     </div>

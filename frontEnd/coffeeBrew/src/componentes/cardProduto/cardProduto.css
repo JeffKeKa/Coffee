@@ -1,6 +1,23 @@
-.CardInteiro{
-    background: #5D2410;
-    height: 250px;
-    width: 350px;
-    border-radius: 5%;
+.cardProdutoMenu {
+  width: 38vw;
+  min-width: 450px;
+
+  border: 0;
+  border-radius: 20px;
+  margin: 0.5vw;
+  padding: 0;
+
+  display: flex;
+
+  background-color: #312b21;
+  color: #ede1d1;
+}
+.imagemCardProduto {
+  width: 40%;
+  height: 90%;
+
+  border: 0;
+  border-radius: 15pt;
+  margin: 10pt;
+  padding: 0;
 }

@@ -11,6 +11,10 @@ function PageMenu() {
       </div>
       <div className="menuCardPageMenu">
         <CardProduto></CardProduto>
+        <CardProduto></CardProduto>
+        <CardProduto></CardProduto>
+        <CardProduto></CardProduto>
+        <CardProduto></CardProduto>
        
       </div>
     </div>

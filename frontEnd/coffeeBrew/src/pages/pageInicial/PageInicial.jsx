@@ -6,27 +6,27 @@ import { useState } from "react";
 import CardProdutoAdd from "../../componentes/cardProdutoAdd/CardProdutoAdd";
 import CardClienteAdd from "../../componentes/cardClienteAdd/CardClienteAdd";
 function PageInicial() {
-    const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(0);
 
-    useEffect(() => {
-      const intervalId = setInterval(() => {
-        setIndex(prevIndex => (prevIndex + 1) % 3);
-      }, 3000);
-  
-      return () => {
-        clearInterval(intervalId);
-      };
-    }, []);
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % 3);
+    }, 3000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
 
   return (
     <div className="conteinerPageInicial">
       <div className="barraLateralPageInicial">
-      <div>
-        <img
-          src="./imagensProduto\imagensLogo\logoSemFundo.png"
-          className="logo"
-        />
-      </div>
+        <div>
+          <img
+            src="./imagensProduto\imagensLogo\logoSemFundo.png"
+            className="logo"
+          />
+        </div>
         <Link to="/Menu" className="botoesPageInicial">
           Menu
         </Link>
@@ -35,6 +35,9 @@ function PageInicial() {
         </Link>
         <Link to="/comandas" className="botoesPageInicial">
           Comanda
+        </Link>
+        <Link to="/edicaoProdutos" className="botoesPageInicial">
+          Product Managment
         </Link>
       </div>
       {/* <div className="direitaPageInicial">
@@ -53,8 +56,6 @@ function PageInicial() {
       </div> */}
 
       {/* <CardProdutoAdd /> */}
-
-      <CardClienteAdd />
     </div>
   );
 }

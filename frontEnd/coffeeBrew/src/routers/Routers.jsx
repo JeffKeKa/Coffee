@@ -4,6 +4,7 @@ import App from '../App'
 import PageInicial from '../pages/pageInicial/PageInicial'
 import PageMenu from '../pages/pageMenu/PageMenu'
 import PageComandas from '../pages/pageComandas/PageComandas'
+import CardProdutoAdd from '../componentes/cardProdutoAdd/CardProdutoAdd'
 
 const Routers= createBrowserRouter([
     {
@@ -21,6 +22,10 @@ const Routers= createBrowserRouter([
             {
                 path:'/comandas',
                 element:<PageComandas />
+            },
+            {
+                path:'/edicaoProdutos',
+                element:<CardProdutoAdd />
             },
         ]
     }

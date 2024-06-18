@@ -3,3 +3,9 @@ body{
   padding: 0;
   border:  0;
 }
+input,textarea{
+  height: 25pt;
+  width: 300pt;
+  border-radius: 10pt;
+  
+}

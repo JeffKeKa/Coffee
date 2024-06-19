@@ -6,6 +6,7 @@ import PageMenu from '../pages/pageMenu/PageMenu'
 import PageComandas from '../pages/pageComandas/PageComandas'
 import CardProdutoAdd from '../componentes/cardProdutoAdd/CardProdutoAdd'
 import PageLogin from '../pages/pageLogin/PageLogin'
+import CadastroCliente from '../pages/pageCadastroCliente/CadastroCliente'
 
 const Routers= createBrowserRouter([
     {
@@ -31,6 +32,10 @@ const Routers= createBrowserRouter([
             {
                 path:'/login',
                 element:<PageLogin />
+            },
+            {
+                path:'/cadastroCliente',
+                element:<CadastroCliente />
             },
         ]
     }

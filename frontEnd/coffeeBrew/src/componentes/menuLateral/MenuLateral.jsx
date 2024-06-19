@@ -25,6 +25,7 @@ function MenuLateral() {
         <Link to="/Menu" className="BotaoLateral">
           Bebidas
         </Link>
+        
       </div>
     </div>
   );

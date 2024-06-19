@@ -3,14 +3,11 @@ export const UsuarioContext = createContext();
 
 export const UsuarioContextProvider = (({children}) =>
 {const [usuarios, setUsuarios] = useState([
-    {
-        nome: 'cordenador',
-        email: 'cordenador@cordenador',
-    }
+    
 ]);
     
     return (
-        <UsuarioContext.Provider value={{usuarios}}>
+        <UsuarioContext.Provider value={{usuarios, setUsuarios}}>
             {children}
     </UsuarioContext.Provider>
     );

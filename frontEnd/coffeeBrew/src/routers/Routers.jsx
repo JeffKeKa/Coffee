@@ -5,6 +5,7 @@ import PageInicial from '../pages/pageInicial/PageInicial'
 import PageMenu from '../pages/pageMenu/PageMenu'
 import PageComandas from '../pages/pageComandas/PageComandas'
 import CardProdutoAdd from '../componentes/cardProdutoAdd/CardProdutoAdd'
+import PageLogin from '../pages/pageLogin/PageLogin'
 
 const Routers= createBrowserRouter([
     {
@@ -26,6 +27,10 @@ const Routers= createBrowserRouter([
             {
                 path:'/edicaoProdutos',
                 element:<CardProdutoAdd />
+            },
+            {
+                path:'/login',
+                element:<PageLogin />
             },
         ]
     }

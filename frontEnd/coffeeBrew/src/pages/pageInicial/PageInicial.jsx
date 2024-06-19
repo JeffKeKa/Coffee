@@ -39,6 +39,9 @@ function PageInicial() {
         <Link to="/edicaoProdutos" className="botoesPageInicial">
           Product Managment
         </Link>
+        <Link to="/login" className="botoesPageInicial">
+          Login
+        </Link>
       </div>
       {/* <div className="direitaPageInicial">
       <div className="carousel-slide imagensCarousel " style={{ display: index === 0 ? 'block' : 'none' }}>
@@ -55,7 +58,7 @@ function PageInicial() {
 
       </div> */}
 
-      {/* <CardProdutoAdd /> */}
+       <CardProdutoAdd /> 
     </div>
   );
 }

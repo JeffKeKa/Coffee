@@ -5,6 +5,7 @@ import "./pageInicial.css";
 import { useState } from "react";
 import CardProdutoAdd from "../../componentes/cardProdutoAdd/CardProdutoAdd";
 import CardClienteAdd from "../../componentes/cardClienteAdd/CardClienteAdd";
+
 function PageInicial() {
   const [index, setIndex] = useState(0);
 
@@ -58,7 +59,8 @@ function PageInicial() {
 
       </div> */}
 
-       <CardProdutoAdd /> 
+       {/* <CardProdutoAdd />  */}
+       <CardClienteAdd/>
     </div>
   );
 }

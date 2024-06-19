@@ -8,12 +8,8 @@ function PageMenu() {
       <div className="menuLateralPageMenu">
         <MenuLateral></MenuLateral>
       </div>
-      <div className="menuCardPageMenu">
-        <CardProduto></CardProduto>
-        <CardProduto></CardProduto>
-      
-       
-      </div>
+        <CardProduto />
+  
     </div>
   );
 }

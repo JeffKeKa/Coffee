@@ -6,11 +6,8 @@ import PageMenu from '../pages/pageMenu/PageMenu'
 import PageComandas from '../pages/pageComandas/PageComandas'
 import CardProdutoAdd from '../componentes/cardProdutoAdd/CardProdutoAdd'
 import PageLogin from '../pages/pageLogin/PageLogin'
-<<<<<<< HEAD
 import CadastroCliente from '../pages/pageCadastroCliente/CadastroCliente'
-=======
 import PageLoginFuncionario from '../pages/pageLoginFuncionario/PageLoginFuncionario'
->>>>>>> 6da3481fd6fd4cb79d610120f70b3dc40ccc2dad
 
 const Routers= createBrowserRouter([
     {
@@ -38,13 +35,8 @@ const Routers= createBrowserRouter([
                 element:<PageLogin />
             },
             {
-<<<<<<< HEAD
-                path:'/cadastroCliente',
-                element:<CadastroCliente />
-=======
                 path:'/loginfuncionario',
                 element:<PageLoginFuncionario />
->>>>>>> 6da3481fd6fd4cb79d610120f70b3dc40ccc2dad
             },
         ]
     }

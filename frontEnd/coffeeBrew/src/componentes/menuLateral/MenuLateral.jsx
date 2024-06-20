@@ -18,7 +18,9 @@ const {urlProdutos, setUrlProdutos} = useContext(UsuarioContext);
         <button className="botoesPageMenu" onClick={()=>{ setUrlProdutos("http://localhost:8010/coffebrew/produto")}}> Cafes </button>
         <button className="botoesPageMenu" onClick={()=>{ setUrlProdutos("http://localhost:8010/coffebrew/produto")}}> Bebidas </button>
         <button className="botoesPageMenu" onClick={()=>{ setUrlProdutos("http://localhost:8010/coffebrew/produto")}}> Salgados </button>
-        <button className="botoesPageMenu" onClick={()=>{ setUrlProdutos("http://localhost:8010/coffebrew/produto")}}> Doces </button>
+        <button className="botoesPageMenu" onClick={()=>{ setUrlProdutos("http://localhost:8010/coffebrew/produto")}}> Doces </button><br /><br />
+
+        <button className="botoesPageMenu" onClick={()=>{ setUrlProdutos(`http://localhost:8010/coffebrew/pedido/${124}`)}}> encaminhar pedido </button>
     </div>
   );
 }

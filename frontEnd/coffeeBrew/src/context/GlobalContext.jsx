@@ -4,7 +4,7 @@ export const UsuarioContext = createContext();
 export const UsuarioContextProvider = ({ children }) => {
   const [usuarios, setUsuarios] = useState(null);
   const [funcionarioLogado, setFuncionarioLogado] = useState(null);
-  const [pedidos, setPedidos] = useState({});
+  const [pedidos, setPedidos] = useState([]);
   const [urlProdutos, setUrlProdutos] = useState("http://localhost:8010/coffebrew/produto")
  console.log(pedidos)
   return (
@@ -16,3 +16,30 @@ export const UsuarioContextProvider = ({ children }) => {
     </UsuarioContext.Provider>
   );
 };
+
+//{
+// {
+//  idproduto: 
+//  quantidade
+//  precototal
+//  status:"em preparo"
+// },
+// {
+//  idproduto: 
+//  quantidade
+//  precototal
+//  status:"em preparo"
+// },
+// {
+//  idproduto: 
+//  quantidade
+//  precototal
+//  status:"em preparo"
+// },
+// {
+//  idproduto: 
+//  quantidade
+//  precototal
+//  status:"em preparo"
+// }
+//}

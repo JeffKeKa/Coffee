@@ -2,7 +2,7 @@ import React from "react";
 import "./menuLateral.css";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { UsuarioContext } from "../../context/GlobalContext";
+import { pedidos, UsuarioContext } from "../../context/GlobalContext";
 
 function MenuLateral() {
 const {urlProdutos, setUrlProdutos} = useContext(UsuarioContext);

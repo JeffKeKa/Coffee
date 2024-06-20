@@ -1,6 +1,7 @@
 package com.sa.coffebrew.controller;
 
 import com.sa.coffebrew.entity.Pedido;
+import com.sa.coffebrew.entity.PedidoFront;
 import com.sa.coffebrew.service.PedidoService;
 import jakarta.validation.Valid;
 import java.util.List;
@@ -62,7 +63,7 @@ public class PedidoController {
 
     @PutMapping("/pedido/{nComanda}")
     public ResponseEntity<Void> adicionarPedido(@PathVariable Integer nComanda,
-            @Valid @RequestBody List<Pedido> pedidos) {
+            @RequestBody List<PedidoFront> pedidos) {
         System.out.println("numero da comanda: " + nComanda);
         System.out.println("preco do pedido: " + pedidos.getFirst().getPrecoPedido());
         if (pedidoService.incluirNovoPedido(pedidos, nComanda)) {

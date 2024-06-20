@@ -38,6 +38,10 @@ const Routers= createBrowserRouter([
                 path:'/loginfuncionario',
                 element:<PageLoginFuncionario />
             },
+            {
+                path:'/cliente',
+                element:<CadastroCliente />
+            },
         ]
     }
 ])

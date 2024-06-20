@@ -1,9 +1,16 @@
 import React, { useState } from "react";
 import './pageComandas.css'
+import { Link } from "react-router-dom";
 function PageComandas() {
   return (
     <div className="pageComandas">
       <section className="barraLateralPageComandas">
+      <div>
+          <img
+            src="./imagensProduto\imagensLogo\logoSemFundo.png"
+            className="logo"
+          />
+        </div>
         <form className="formularioPageComanda">
           <label className="labelAddproduto">Informe numero da comanda:</label>
           <input className="inputComanda" type="text" name="inputComanda" required />

@@ -57,8 +57,8 @@
   animation: pulse512 1.5s infinite;
 }
 .direitaPageInicial {
-  width: 90%;
-  height: 95%;
+  width: 79%;
+  height: 90%;
 
   margin: 10pt;
   border: 0;
@@ -66,8 +66,7 @@
   padding: 0;
 
   border-radius: 40px;
-  background-color: #f4f0ee;
-  /* position: relative; */
+  background-image: url("../../../public/imagensProduto/imagensLogo/fundo.jpg") ;
 }
 .imagensCarousel{
   width: 100%;

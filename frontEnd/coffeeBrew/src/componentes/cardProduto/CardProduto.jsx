@@ -5,7 +5,7 @@ import "./cardProduto.css";
 
 function CardProduto() {
   const [produtos, setProdutos] = useState([]);
-  const { urlProdutos } = useContext(UsuarioContext);
+  const { setPedidos, urlProdutos } = useContext(UsuarioContext);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,10 +19,14 @@ function CardProduto() {
     fetchData();
   }, [urlProdutos]); // Adicionamos urlProdutos como dependência para que useEffect seja reexecutado quando a URL mudar
 
+  const addProduto = async (produtoId) => {
+    const updatedPedidos = [...pedidos, produtoId];
+    setPedidos(updatedPedidos)
+  };
   return (
     <div className="menuCardPageMenu">
       {produtos.map((produto) => (
-        <div key={produto.id} className="cardProdutoMenu">
+        <div key={produto.idProduto} className="cardProdutoMenu">
           <img
             src="./imagensProduto/imagensCafe/produtoCafeAmericano.jpg"
             className="imagemCardProduto"
@@ -33,7 +37,12 @@ function CardProduto() {
             <h5 className="descricaoCardProduto">{produto.descricao}</h5>
             <div>
               <h1 className="">{produto.preco}</h1>
-              <button className="">Comprar</button>
+              <button
+                className=""
+                onClick={() => addProduto(produto.idProduto)}
+              >
+                Comprar
+              </button>
             </div>
           </div>
         </div>

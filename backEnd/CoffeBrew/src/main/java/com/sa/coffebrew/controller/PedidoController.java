@@ -64,12 +64,12 @@ public class PedidoController {
     @PutMapping("/pedido/{nComanda}")
     public ResponseEntity<Void> adicionarPedido(@PathVariable Integer nComanda,
             @RequestBody List<PedidoFront> pedidos) {
-        System.out.println("numero da comanda: " + nComanda);
-        System.out.println("preco do pedido: " + pedidos.getFirst().getPrecoPedido());
+
         if (pedidoService.incluirNovoPedido(pedidos, nComanda)) {
             return new ResponseEntity<>(HttpStatus.OK);
         } else {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
 }

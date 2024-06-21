@@ -1,16 +1,12 @@
 package com.sa.coffebrew.service;
 
 import com.sa.coffebrew.entity.Comanda;
-import com.sa.coffebrew.entity.Pedido;
 import com.sa.coffebrew.repository.ComandaRepository;
 import com.sa.coffebrew.repository.PedidoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service
 public class ComandaService {
@@ -22,10 +18,9 @@ public class ComandaService {
     private PedidoRepository pedidoRepository;
 
     public Comanda incluirComanda(Comanda comanda) {
-        
+
         Long idComanda = comandaRepository.save(comanda).getIdComanda();
         return comandaRepository.getReferenceById(idComanda);
-
 
     }
 
@@ -39,16 +34,18 @@ public class ComandaService {
         }
     }
 
-    public Comanda IncluirComandaPorNumero(Integer nComanda){
+    public Comanda IncluirComandaPorNumero(Integer nComanda) {
         Optional<Comanda> pesquisa = comandaRepository.findActiveComandaByNumero(nComanda);
 
-        if(pesquisa.isPresent()){
+        if (pesquisa.isPresent()) {
             return pesquisa.get();
-        }else{
-           Comanda comanda = new Comanda();
-           comanda.setnComanda(nComanda);
-           comanda.setStatus("ATIVO");
-           return incluirComanda(comanda);
+        } else {
+            Comanda comanda = new Comanda();
+            comanda.setnComanda(nComanda);
+            comanda.setStatus("ATIVO");
+            comanda.setPrecoTotal(1.90);
+            Comanda ComandaFront = incluirComanda(comanda);
+            return ComandaFront;
         }
     }
 

@@ -2,10 +2,12 @@ import React from "react";
 import "./menuLateral.css";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { pedidos, UsuarioContext } from "../../context/GlobalContext";
+import {  UsuarioContext } from "../../context/GlobalContext";
+import FinalizarPedidoComponent from "../../service/apiPedido";
 
 function MenuLateral() {
 const {urlProdutos, setUrlProdutos} = useContext(UsuarioContext);
+const {Pedidos} = useContext(UsuarioContext)
 
   return (
     <div className="menuLateralbg">
@@ -20,7 +22,8 @@ const {urlProdutos, setUrlProdutos} = useContext(UsuarioContext);
         <button className="botoesPageMenu" onClick={()=>{ setUrlProdutos("http://localhost:8010/coffebrew/produto")}}> Salgados </button>
         <button className="botoesPageMenu" onClick={()=>{ setUrlProdutos("http://localhost:8010/coffebrew/produto")}}> Doces </button><br /><br />
 
-        <button className="botoesPageMenu" onClick={()=>{ setUrlProdutos(`http://localhost:8010/coffebrew/pedido/${124}`)}}> encaminhar pedido </button>
+        {/* <button className="botoesPageMenu" onClick={()=>{finalizarPedido()}}> encaminhar pedido </button> */}
+        <FinalizarPedidoComponent/>
     </div>
   );
 }

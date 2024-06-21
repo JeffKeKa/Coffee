@@ -2,9 +2,15 @@
   height: 100vh;
   width: 100vw;
   background-color: bisque;
-
+  
   display: flex;
   flex-direction: row;
+}
+.direitaPageInicialImg {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../../../public/imagensProduto/imagensLogo/fundo.jpg");
+  opacity: 0.5;
 }
 .barraLateralPageInicial {
   height: 100%;
@@ -57,8 +63,8 @@
   animation: pulse512 1.5s infinite;
 }
 .direitaPageInicial {
-  width: 79%;
-  height: 90%;
+  width: 96%;
+  height: 94%;
 
   margin: 10pt;
   border: 0;
@@ -66,9 +72,8 @@
   padding: 0;
 
   border-radius: 40px;
-  background-image: url("../../../public/imagensProduto/imagensLogo/fundo.jpg") ;
 }
-.imagensCarousel{
+.imagensCarousel {
   width: 100%;
   height: 100%;
 

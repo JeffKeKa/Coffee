@@ -22,7 +22,7 @@ function PageInicial() {
   return (
     <div className="conteinerPageInicial">
       <div className="barraLateralPageInicial">
-      <Link to="/pagefuncionario" className="botoesPageInicial">
+        <Link to="/pagefuncionario" className="botoesPageInicial">
           area restrita a funcionario
         </Link>
         <div>
@@ -41,19 +41,38 @@ function PageInicial() {
           Cliente
         </Link>
       </div>
-      <div className="direitaPageInicial">
-      <div className="carousel-slide imagensCarousel " style={{ display: index === 0 ? 'block' : 'none' }}>
-          <img src="https://3.bp.blogspot.com/-gEIxd4Q5pU4/UTFWax73A3I/AAAAAAABr94/3DIoxR_NfnI/s1600/fotos-e-im%C3%A1genes-de-granos-de-caf%C3%A9-y-taza-coffee-photos-9.jpg"   className='imagensCarousel' /> 
-        </div>
+      <div className="direitaPageInicialImg">
+        <div className="direitaPageInicial">
+          <div
+            className="carousel-slide imagensCarousel "
+            style={{ display: index === 0 ? "block" : "none" }}
+          >
+            <img
+              src="https://3.bp.blogspot.com/-gEIxd4Q5pU4/UTFWax73A3I/AAAAAAABr94/3DIoxR_NfnI/s1600/fotos-e-im%C3%A1genes-de-granos-de-caf%C3%A9-y-taza-coffee-photos-9.jpg"
+              className="imagensCarousel"
+            />
+          </div>
 
-        <div className="carousel-slide imagensCarousel" style={{ display: index === 1 ? 'block' : 'none' }}>
-        <img src="https://media-cdn.tripadvisor.com/media/photo-s/11/c3/1c/19/20170924-134626-largejpg.jpg"   className='imagensCarousel' /> 
-        </div>
+          <div
+            className="carousel-slide imagensCarousel"
+            style={{ display: index === 1 ? "block" : "none" }}
+          >
+            <img
+              src="https://media-cdn.tripadvisor.com/media/photo-s/11/c3/1c/19/20170924-134626-largejpg.jpg"
+              className="imagensCarousel"
+            />
+          </div>
 
-        <div className="carousel-slide imagensCarousel" style={{ display: index === 2 ? 'block' : 'none' }}>
-        <img src="https://th.bing.com/th/id/OIP.0HRY6dUFgUyc1t-xyA1siAHaE8?rs=1&pid=ImgDetMain"   className='imagensCarousel' /> 
+          <div
+            className="carousel-slide imagensCarousel"
+            style={{ display: index === 2 ? "block" : "none" }}
+          >
+            <img
+              src="https://th.bing.com/th/id/OIP.0HRY6dUFgUyc1t-xyA1siAHaE8?rs=1&pid=ImgDetMain"
+              className="imagensCarousel"
+            />
+          </div>
         </div>
-
       </div>
     </div>
   );

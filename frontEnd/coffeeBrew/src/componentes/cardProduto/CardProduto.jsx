@@ -29,10 +29,10 @@ function CardProduto() {
 
   const addProduto = async (produtoId, precoPedido) => {
     const pedidoFeito ={
-      idproduto: produtoId,
+      idProduto: produtoId,
       quantidade: Number(document.getElementById(produtoId).value),
-      precototal: Number(document.getElementById(produtoId).value)*precoPedido,
-      status: "em preparo",
+      precoPedido: Number(document.getElementById(produtoId).value)*precoPedido,
+      statusPedido: "em preparo",
     }
 
     const updatedPedidos = [...pedidos, pedidoFeito];
@@ -59,7 +59,7 @@ function CardProduto() {
               >
                 Comprar
               </button>
-              <input type="number" name="" id={produto.idProduto} onChange={handleChange}/>
+              <input type="number" min={0} name="" id={produto.idProduto} onChange={handleChange}/>
             </div>
           </div>
         </div>

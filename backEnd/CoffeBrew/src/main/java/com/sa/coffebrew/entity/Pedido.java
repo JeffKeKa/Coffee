@@ -6,28 +6,29 @@ import jakarta.persistence.*;
 @Table(name = "pedidos")
 @Entity
 public class Pedido {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false)
     private Long idPedido;
-    
+
     @Column(nullable = false)
     private Integer quantidade;
-    
+
     @Column(nullable = false)
     private Double precoPedido;
-    
+
     @Column(nullable = false)
     private String statusPedido;
-    
+
     @ManyToOne
     @JsonBackReference
     @JoinColumn(nullable = false)
     private Comanda comanda;
-    
+
     @OneToOne
     @JoinColumn(nullable = false)
-    private Produto produto; 
+    private Produto produto;
 
     public Long getIdPedido() {
         return idPedido;
@@ -76,5 +77,5 @@ public class Pedido {
     public void setStatusPedido(String statusPedido) {
         this.statusPedido = statusPedido;
     }
-    
+
 }

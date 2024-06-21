@@ -7,3 +7,4 @@ const api = axios.create({
 export const produtoCafe = async () => {
     return api.post('/')
 }
+

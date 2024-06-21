@@ -2,13 +2,13 @@ package com.sa.coffebrew.controller;
 
 import com.sa.coffebrew.entity.Comanda;
 import com.sa.coffebrew.service.ComandaService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
 import java.util.List;
 import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class ComandaController {
@@ -28,7 +28,6 @@ public class ComandaController {
 //        }
 //        
 //    }
-
     @DeleteMapping("/comanda/{id}")
     public ResponseEntity<Object> excluirComanda(@PathVariable(value = "id") Long id) {
         if (comandaService.excluirComanda(id)) {
@@ -38,15 +37,23 @@ public class ComandaController {
         }
     }
 
-    @GetMapping("/comanda/{id}")
-    public ResponseEntity<Comanda> consultarComanda(@PathVariable Long id) {
-        Optional<Comanda> comanda = comandaService.consultarComanda(id);
-        if(comanda.isPresent())
-        {
+    @GetMapping("/comanda/{idComanda}")
+    public ResponseEntity<Comanda> consultarComanda(@PathVariable Long idComanda) {
+        Optional<Comanda> comanda = comandaService.consultarComanda(idComanda);
+        if (comanda.isPresent()) {
             return new ResponseEntity<>(comanda.get(), HttpStatus.OK);
-        } else 
-        {       
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);            
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("/comanda/numero/{nComanda}")
+    public ResponseEntity<Comanda> consultarComandaPorNumero(@PathVariable Integer nComanda) {
+        Comanda comanda = comandaService.consultarComandaPorNumero(nComanda);
+        if (comanda != null) {
+            return new ResponseEntity<>(comanda, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 

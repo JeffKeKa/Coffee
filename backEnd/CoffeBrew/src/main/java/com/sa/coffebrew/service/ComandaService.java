@@ -53,6 +53,19 @@ public class ComandaService {
         return comandaRepository.findById(idComanda);
     }
 
+    public Comanda consultarComandaPorNumero(Integer nComanda) {
+
+        Optional<Comanda> comanda = comandaRepository.findActiveComandaByNumero(nComanda);
+
+        if (comanda.isPresent()) {
+
+            return comanda.get();
+        } else {
+            return null;
+        }
+
+    }
+
     public List<Comanda> listarComanda() {
         return comandaRepository.findAll();
     }

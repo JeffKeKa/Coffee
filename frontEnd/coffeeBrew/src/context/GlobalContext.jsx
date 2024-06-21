@@ -6,40 +6,14 @@ export const UsuarioContextProvider = ({ children }) => {
   const [funcionarioLogado, setFuncionarioLogado] = useState(null);
   const [pedidos, setPedidos] = useState([]);
   const [urlProdutos, setUrlProdutos] = useState("http://localhost:8010/coffebrew/produto")
- console.log(pedidos)
+  const [comandas, setComandas] = useState([])
+ console.log(comandas)
   return (
     
     <UsuarioContext.Provider
-      value={{ usuarios, setUsuarios, funcionarioLogado, setFuncionarioLogado, pedidos, setPedidos, urlProdutos, setUrlProdutos }}
+      value={{ usuarios, setUsuarios, funcionarioLogado, setFuncionarioLogado, pedidos, setPedidos, urlProdutos, setUrlProdutos, comandas, setComandas }}
     >
       {children}
     </UsuarioContext.Provider>
   );
 };
-
-//{
-// {
-//  idproduto: 
-//  quantidade
-//  precototal
-//  status:"em preparo"
-// },
-// {
-//  idproduto: 
-//  quantidade
-//  precototal
-//  status:"em preparo"
-// },
-// {
-//  idproduto: 
-//  quantidade
-//  precototal
-//  status:"em preparo"
-// },
-// {
-//  idproduto: 
-//  quantidade
-//  precototal
-//  status:"em preparo"
-// }
-//}

@@ -1,67 +1,86 @@
-///*
-// * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-// * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
-// */
-//package com.sa.coffebrew.service;
-//
-//import com.sa.coffebrew.entity.Comanda;
-//import com.sa.coffebrew.repository.ComandaRepository;
-//import java.util.List;
-//import java.util.Optional;
-//import org.junit.jupiter.api.AfterEach;
-//import org.junit.jupiter.api.AfterAll;
-//import org.junit.jupiter.api.BeforeEach;
-//import org.junit.jupiter.api.BeforeAll;
-//import org.junit.jupiter.api.Test;
-//import static org.junit.jupiter.api.Assertions.*;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.boot.test.context.SpringBootTest;
-//
-///**
-// *
-// * @author Pichau
-// */
-//@SpringBootTest
-//public class ComandaServiceTest {
-//    
-//    @Autowired
-//    private ComandaService comandaService;
-//
-//    @Autowired
-//    private ComandaRepository comandaRepository;
-//
-//    private Comanda comanda;
-//    public ComandaServiceTest() {
-//    }
-//    
-//    @BeforeAll
-//    public static void setUpClass() {
-//    }
-//    
-//    @AfterAll
-//    public static void tearDownClass() {
-//    }
-//    
-//    @BeforeEach
-//    public void setUp() {
-//    }
-//    
-//    @AfterEach
-//    public void tearDown() {
-//    }
-//
-//    /**
-//     * Test of incluirComanda method, of class ComandaService.
-//     */
-//    @Test
-//    public void testIncluirComanda() {
-//        Comanda novaComanda = new Comanda();
-//        novaComanda.setPrecoTotal(150.0);
-//        novaComanda.setStatus("ATIVO");
-//        novaComanda.setnComanda(124);
-//
-//        Comanda comandaSalva = comandaService.incluirComanda(novaComanda);
-//        assertNotNull(comandaSalva.getIdComanda());
-//    }
-//
-//}
+package com.sa.coffebrew.service;
+
+import com.sa.coffebrew.entity.Comanda;
+import com.sa.coffebrew.repository.ComandaRepository;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.Optional;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+@SpringBootTest
+public class ComandaServiceTest {
+
+    @Autowired
+    private ComandaService comandaService;
+
+    @Autowired
+    private ComandaRepository comandaRepository;
+
+    private Comanda comanda;
+
+    @BeforeEach
+    public void setUp() {
+        comanda = new Comanda();
+        comanda.setPrecoTotal(200.0);
+        comanda.setStatus("ATIVO");
+        comanda.setnComanda(101);
+    }
+
+    
+
+    @Test
+    public void testIncluirComanda() {
+        Comanda comandaSalva = comandaService.incluirComanda(comanda);
+        assertNotNull(comandaSalva.getIdComanda());
+    }
+
+    @Test
+    public void testExcluirComanda() {
+        Comanda comandaSalva = comandaService.incluirComanda(comanda);
+        Long idComanda = comandaSalva.getIdComanda();
+        Boolean isDeleted = comandaService.excluirComanda(idComanda);
+        assertTrue(isDeleted);
+        assertFalse(comandaRepository.findById(idComanda).isPresent());
+    }
+
+    @Test
+    public void testIncluirComandaPorNumero() {
+        Comanda comandaSalva = comandaService.IncluirComandaPorNumero(102);
+        assertNotNull(comandaSalva.getIdComanda());
+        assertEquals(102, comandaSalva.getnComanda());
+        assertEquals("ATIVO", comandaSalva.getStatus());
+    }
+
+    @Test
+    public void testConsultarComanda() {
+        Comanda comandaSalva = comandaService.incluirComanda(comanda);
+        Optional<Comanda> comandaConsultada = comandaService.consultarComanda(comandaSalva.getIdComanda());
+        assertTrue(comandaConsultada.isPresent());
+        assertEquals(comandaSalva.getIdComanda(), comandaConsultada.get().getIdComanda());
+    }
+
+    @Test
+    public void testListarComanda() {
+        comandaService.incluirComanda(comanda);
+        assertFalse(comandaService.listarComanda().isEmpty());
+    }
+
+    @Test
+    public void testAtualizarComanda() {
+        Comanda comandaSalva = comandaService.incluirComanda(comanda);
+        comandaSalva.setPrecoTotal(250.0);
+        comandaSalva.setStatus("INATIVO");
+        Boolean isUpdated = comandaService.atualizarComanda(comandaSalva);
+        assertTrue(isUpdated);
+
+        Optional<Comanda> comandaAtualizada = comandaService.consultarComanda(comandaSalva.getIdComanda());
+        assertTrue(comandaAtualizada.isPresent());
+        assertEquals(250.0, comandaAtualizada.get().getPrecoTotal());
+        assertEquals("INATIVO", comandaAtualizada.get().getStatus());
+    }
+}

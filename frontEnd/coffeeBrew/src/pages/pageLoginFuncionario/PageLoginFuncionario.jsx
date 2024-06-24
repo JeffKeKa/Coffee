@@ -1,4 +1,8 @@
 import React from "react";
+import { UsuarioContext } from "../../context/GlobalContext";
+import { useState } from "react";
+import { Navigate } from "react-router-dom";
+
 
 function PageLoginFuncionario() {
   const [form, setForm] = useState({ cpf: "", senha: "" });

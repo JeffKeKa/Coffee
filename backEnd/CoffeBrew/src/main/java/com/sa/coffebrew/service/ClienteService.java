@@ -21,7 +21,9 @@ import java.util.Optional;
                cliente.getCpf() == null ||
                cliente.getEmail() == null ||
                cliente.getSenha() == null ||
-               cliente.getCelular() == null){
+               cliente.getCelular() == null ||
+               cliente.getCpf().length() > 11 ||
+               cliente.getCpf().length() < 11){
                 
                return null;
                }

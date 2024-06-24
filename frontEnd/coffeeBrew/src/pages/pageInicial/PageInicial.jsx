@@ -22,7 +22,7 @@ function PageInicial() {
   return (
     <div className="conteinerPageInicial">
       <div className="barraLateralPageInicial">
-        <Link to="/pagefuncionario" className="botoesPageInicial">
+        <Link to="/pageloginfuncionario" className="botoesPageInicial">
           area restrita a funcionario
         </Link>
         <div>
@@ -32,14 +32,20 @@ function PageInicial() {
           />
         </div>
         <Link to="/Menu" className="botoesPageInicial">
-          Menu
-        </Link>
-        <Link to="/comandas" className="botoesPageInicial">
-          Comanda
-        </Link>
-        <Link to="/cadastroCliente" className="botoesPageInicial">
-          Cliente
-        </Link>
+            Menu
+          </Link>
+          <Link to="/comandas" className="botoesPageInicial">
+            Pagamento
+          </Link>
+          <Link to="/comandas" className="botoesPageInicial">
+            Comanda
+          </Link>
+          <Link to="/edicaoProdutos" className="botoesPageInicial">
+            Product Managment
+          </Link>
+          <Link to="/login" className="botoesPageInicial">
+            Login
+          </Link>
       </div>
       <div className="direitaPageInicialImg">
         <div className="direitaPageInicial">

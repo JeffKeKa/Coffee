@@ -17,6 +17,15 @@ import java.util.Optional;
         private ClienteRepository clienteRepository;
 
         public Long incluirCliente(Cliente cliente) {
+               if(cliente.getNome() == null ||
+               cliente.getCpf() == null ||
+               cliente.getEmail() == null ||
+               cliente.getSenha() == null ||
+               cliente.getCelular() == null){
+                
+               return null;
+               }
+
             String cpf = cliente.getCpf();
             Cliente cli = clienteRepository.findByCpf(cpf);
             

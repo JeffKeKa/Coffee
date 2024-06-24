@@ -1,46 +1,57 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./pageComandas.css";
-import { Link } from "react-router-dom";
 import axios from "axios";
-import { useContext, useEffect } from "react";
 import { UsuarioContext } from "../../context/GlobalContext";
 
 function PageComandas() {
   const { comandas, setComandas } = useContext(UsuarioContext);
+  const [inputComanda, setInputComanda] = useState("");
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(`http://localhost:8010/coffebrew/comanda/numero/${22}`);
-        setComandas(response.data);
-      } catch (error) {
-        console.error("Error:", error);
-      }
-    };
-    fetchData();
-  }, []);
+  const consultarComanda = async () => {
+    try {
+      const response = await axios.get(
+        `http://localhost:8010/coffebrew/comanda/numero/${inputComanda}`
+      );
+      setComandas(response.data);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  const handleInputChange = (event) => {
+    setInputComanda(event.target.value);
+  };
 
   return (
     <div className="pageComandas">
       <section className="barraLateralPageComandas">
         <div>
           <img
-            src="./imagensProduto\imagensLogo\logoSemFundo.png"
+            src="./imagensProduto/imagensLogo/logoSemFundo.png"
             className="logo"
+            alt="Logo"
           />
         </div>
         <form className="formularioPageComanda">
           <label className="labelAddproduto">Informe numero da comanda:</label>
           <input
             className="inputComanda"
-            type="text"
+            type="number"
             name="inputComanda"
+            id="comandaInputInforme"
+            value={inputComanda}
+            onChange={handleInputChange}
             required
           />
-          <button className="BotaoCadastrarProduto" type="submit">
+          <button
+            className="BotaoCadastrarProduto"
+            type="button" // change type to button to prevent form submission
+            onClick={consultarComanda}
+          >
             Confirmar
           </button>
         </form>
+        <button className="BotaoCadastrarProduto">Pagar</button>
       </section>
 
       <section>
@@ -55,13 +66,13 @@ function PageComandas() {
           <tbody>
             {comandas &&
               comandas.pedidos &&
-              comandas.pedidos.map((pedido) => (
-                <tr>
+              comandas.pedidos.map((pedido, index) => (
+                <tr key={index}>
                   <td>{pedido.produto.nome}</td>
                   <td>{pedido.quantidade}</td>
                   <td>{pedido.precoPedido}</td>
                 </tr>
-              )) }
+              ))}
           </tbody>
         </table>
       </section>

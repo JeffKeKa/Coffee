@@ -15,6 +15,15 @@ public class FuncionarioService {
     private FuncionarioRepository funcionarioRepository;
 
     public Long incluirFuncionario(Funcionario funcionario) {
+        if(funcionario.getNome() == null ||
+               funcionario.getCpf() == null ||
+               funcionario.getEmail() == null ||
+               funcionario.getCpf().length() > 11 ||
+               funcionario.getCpf().length() < 11 ||
+               funcionario.getPerfil() == null){
+                
+               return null;
+               }
         return funcionarioRepository.save(funcionario).getIdFuncionario();
     }
 

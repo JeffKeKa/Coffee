@@ -15,7 +15,14 @@ public class ProdutoService {
     private ProdutoRepository produtoRepository;
 
     public Long incluirProduto(Produto produto) {
+        if(produto.getDescricao() == null ||
+           produto.getNome() == null ||
+           produto.getPreco() == null){
+           
+            return null;
+        }else{
         return produtoRepository.save(produto).getIdProduto();
+        }
     }
 
     public Boolean excluirProduto(Long idProduto) {

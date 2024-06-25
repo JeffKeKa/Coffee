@@ -16,12 +16,13 @@ public class Funcionario {
     @Column(nullable = false)
     private String nome;
     
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true, length = 11)
     private String cpf;
     
     @Column(nullable = false)
     private String email;
 
+    
     public Long getIdFuncionario() {
         return idFuncionario;
     }
@@ -61,4 +62,7 @@ public class Funcionario {
     public void setEmail(String email) {
         this.email = email;
     }
+    
+ 
+    
 }

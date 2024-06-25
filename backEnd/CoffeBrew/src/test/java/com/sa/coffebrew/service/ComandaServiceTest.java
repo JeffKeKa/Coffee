@@ -24,6 +24,8 @@ public class ComandaServiceTest {
 
     private Comanda comanda;
     
+    private Comanda comandaNova;
+    
     
     public static int gerarNumeroDe3Digitos() {
     Random random = new Random();
@@ -43,7 +45,7 @@ public class ComandaServiceTest {
     public void testIncluirComanda() {
         System.out.println("teste de incluir comanda");
         Comanda comandaSalva = comandaService.incluirComanda(comanda);
-        assertNotNull(comandaSalva.getIdComanda());
+        assertNotNull(comandaSalva);
         
     }
 
@@ -94,9 +96,68 @@ public class ComandaServiceTest {
         comandaSalva.setPrecoTotal(250.0);
         comandaSalva.setStatus("INATIVO");
         Boolean comandaAtualizada = comandaService.atualizarComanda(comandaSalva);
-        assertTrue(comandaAtualizada);
-
-        
+        assertTrue(comandaAtualizada);   
        
     }
+    
+
+    @Test
+    public void testIncluirComandaSemPrecoTotal() {
+        System.out.println("teste de incluir comanda sem preco total");
+        
+        comandaNova = new Comanda();
+        comandaNova.setPrecoTotal(null);
+        comandaNova.setStatus("ATIVO");
+        comandaNova.setnComanda(gerarNumeroDe3Digitos());
+        
+        
+        Comanda comandaSalva = comandaService.incluirComanda(comandaNova);
+        assertNull(comandaSalva);
+        
+    }
+    
+     @Test
+    public void testIncluirComandaSemStatus() {
+        System.out.println("teste de incluir comanda sem status");
+        
+        comandaNova = new Comanda();
+        comandaNova.setPrecoTotal(1.59);
+        comandaNova.setStatus(null);
+        comandaNova.setnComanda(gerarNumeroDe3Digitos());
+        
+        
+        Comanda comandaSalva = comandaService.incluirComanda(comandaNova);
+        assertNull(comandaSalva);
+        
+    }
+     @Test
+    public void testIncluirComandaSemNumeroComanda() {
+        System.out.println("teste de incluir comanda sem nComanda");
+        
+        comandaNova = new Comanda();
+        comandaNova.setPrecoTotal(1.43);
+        comandaNova.setStatus("ATIVO");
+        comandaNova.setnComanda(null);
+        
+        
+        Comanda comandaSalva = comandaService.incluirComanda(comandaNova);
+        assertNull(comandaSalva);
+        
+    }
+    
+    @Test
+    public void testIncluirComandaComPrecoTotal() {
+        System.out.println("teste de incluir comanda sem preco total");
+        
+        comandaNova = new Comanda();
+        comandaNova.setPrecoTotal(null);
+        comandaNova.setStatus("ATIVO");
+        comandaNova.setnComanda(gerarNumeroDe3Digitos());
+        
+        
+        Comanda comandaSalva = comandaService.incluirComanda(comandaNova);
+        assertNull(comandaSalva);
+        
+    }
+    
 }

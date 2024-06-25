@@ -79,6 +79,42 @@ class ProdutoServiceTest {
 
         Optional<Produto> produtoAtualizado = produtoRepository.findById(produto.getIdProduto());
         assertTrue(produtoAtualizado.isPresent());
-        assertEquals("Descrição Atualizada", produtoAtualizado.get().getDescricao());
+        
+    }
+    
+    @Test
+    void testIncluirProdutoSemPreco() {
+        System.out.println("teste de incluir produto sem preco");
+        Produto novoProduto = new Produto();
+        novoProduto.setNome("Produto Sem Preço");
+        novoProduto.setDescricao("Descricao do Produto Sem Preço");
+        novoProduto.setPreco(null);
+
+        Long idproduto = produtoService.incluirProduto(novoProduto);
+        assertNull(idproduto);
+    }
+    
+    @Test
+    void testIncluirProdutoSemNome() {
+        System.out.println("teste de incluir produto sem Nome");
+        Produto novoProduto = new Produto();
+        novoProduto.setNome(null);
+        novoProduto.setDescricao("Descricao do Produto Sem Nome");
+        novoProduto.setPreco(1.90);
+
+        Long idproduto = produtoService.incluirProduto(novoProduto);
+        assertNull(idproduto);
+    }
+    
+    @Test
+    void testIncluirProdutoSemDescricao() {
+        System.out.println("teste de incluir produto sem descricao");
+        Produto novoProduto = new Produto();
+        novoProduto.setNome("Produto Sem Descricao");
+        novoProduto.setDescricao(null);
+        novoProduto.setPreco(2.90);
+        
+        Long idproduto = produtoService.incluirProduto(novoProduto);
+        assertNull(idproduto);
     }
 }

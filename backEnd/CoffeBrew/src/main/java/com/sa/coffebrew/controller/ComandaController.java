@@ -16,18 +16,16 @@ public class ComandaController {
     @Autowired
     private ComandaService comandaService;
 
-//    @PostMapping("/comanda")
-//    public ResponseEntity<Long> incluirComanda(@RequestBody Comanda comanda,@PathVariable(value="idCliente") Long idCliente) {
-//        Comanda comanda = comandaService.incluirComanda(comanda, idCliente);
-//        if(idComanda  != null && idComanda  > 0)
-//        {
-//        return new ResponseEntity<>(idComanda , HttpStatus.OK);
-//        }else 
-//        {
-//        return new ResponseEntity<>(HttpStatus.NOT_FOUND);            
-//        }
-//        
-//    }
+    @PostMapping("/comanda")
+    public ResponseEntity<Comanda> incluirComanda(@RequestBody Comanda comanda) {
+        Comanda comandaid = comandaService.incluirComanda(comanda);
+        if(comandaid != null){
+        return new ResponseEntity<>(comandaid, HttpStatus.OK);
+        }else{
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);            
+        }
+        
+    }
     @DeleteMapping("/comanda/{id}")
     public ResponseEntity<Object> excluirComanda(@PathVariable(value = "id") Long id) {
         if (comandaService.excluirComanda(id)) {

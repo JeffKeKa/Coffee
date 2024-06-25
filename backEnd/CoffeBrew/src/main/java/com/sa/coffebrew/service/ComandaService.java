@@ -18,10 +18,16 @@ public class ComandaService {
     private PedidoRepository pedidoRepository;
 
     public Comanda incluirComanda(Comanda comanda) {
-
+        
+        if(comanda.getPrecoTotal() == null||
+           comanda.getStatus() == null||
+           comanda.getnComanda() == null)
+        {
+        return null;
+        }else{
         Long idComanda = comandaRepository.save(comanda).getIdComanda();
         return comandaRepository.getReferenceById(idComanda);
-
+        }
     }
 
     public Boolean excluirComanda(Long idComanda) {

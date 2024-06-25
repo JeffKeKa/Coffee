@@ -8,6 +8,7 @@
   padding: 0;
 
   display: flex;
+  
 
   background-color: #312b21;
   color: #ede1d1;
@@ -32,4 +33,35 @@
   display: flex;
   flex-flow: row wrap;
   background-color: bisque;
+}
+.botaoComprar{
+  width: 5%;
+  max-width: 300pt;
+  min-width: 100pt;
+  height: 7%;
+  min-height: 12pt;
+
+  border: none;
+  color: #fff;
+  background-image: linear-gradient(30deg, #5D2410,  #e05b22   );
+  border-radius: 10px;
+  background-size: 100% auto;
+  font-family: inherit;
+  font-size: 20px;
+  padding: 0.6em 1.5em;
+  margin: 2%;
+}
+.quantidadeProduto{
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 50%;
+  box-sizing: border-box; /* Garante que o padding não aumente o tamanho total */
+  transition: border-color 0.3s ease-in-out; /* Efeito de transição suave para a borda */
+}
+.apresentacaoPreco{
+  height: 100pt;
+  width: 100pt;
+  background-color: #ccc;
 }

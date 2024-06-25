@@ -5,6 +5,7 @@ import "./pageInicial.css";
 import { useState } from "react";
 import CardProdutoAdd from "../../componentes/cardProdutoAdd/CardProdutoAdd";
 import CardClienteAdd from "../../componentes/cardClienteAdd/CardClienteAdd";
+import { CiSettings } from "react-icons/ci";
 
 function PageInicial() {
   const [index, setIndex] = useState(0);
@@ -22,9 +23,7 @@ function PageInicial() {
   return (
     <div className="conteinerPageInicial">
       <div className="barraLateralPageInicial">
-        <Link to="/pageloginfuncionario" className="botoesPageInicial">
-          area restrita a funcionario
-        </Link>
+       
         <div>
           <img
             src="./imagensProduto\imagensLogo\logoSemFundo.png"
@@ -37,14 +36,15 @@ function PageInicial() {
           <Link to="/comandas" className="botoesPageInicial">
             Pagamento
           </Link>
-          <Link to="/comandas" className="botoesPageInicial">
-            Comanda
+          <Link to="/produtoEdicao" className="botoesPageInicial">
+            Idição Produtos
           </Link>
-          <Link to="/edicaoProdutos" className="botoesPageInicial">
-            Product Managment
-          </Link>
+
           <Link to="/login" className="botoesPageInicial">
             Login
+          </Link>
+          <Link to="/pageloginfuncionario" className="botaoConfig">
+          <CiSettings className="Configuracoes"/>
           </Link>
       </div>
       <div className="direitaPageInicialImg">

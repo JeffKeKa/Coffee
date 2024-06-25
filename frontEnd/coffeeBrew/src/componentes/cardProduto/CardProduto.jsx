@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import axios from "axios";
 import { UsuarioContext } from "../../context/GlobalContext";
 import "./cardProduto.css";
+import { MdAttachMoney } from "react-icons/md";
 
 function CardProduto() {
   const [produtos, setProdutos] = useState([]);
@@ -9,11 +10,11 @@ function CardProduto() {
 
   const handleChange = (e) => {
     const { Q, value } = e.target;
-    (prevState => ({
-        ...prevState,
-        [Q]: value
-    }));
-};
+    (prevState) => ({
+      ...prevState,
+      [Q]: value,
+    });
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,12 +29,13 @@ function CardProduto() {
   }, [urlProdutos]); // Adicionamos urlProdutos como dependência para que useEffect seja reexecutado quando a URL mudar
 
   const addProduto = async (produtoId, precoPedido) => {
-    const pedidoFeito ={
+    const pedidoFeito = {
       idProduto: produtoId,
       quantidade: Number(document.getElementById(produtoId).value),
-      precoPedido: Number(document.getElementById(produtoId).value)*precoPedido,
+      precoPedido:
+        Number(document.getElementById(produtoId).value) * precoPedido,
       statusPedido: "em preparo",
-    }
+    };
 
     const updatedPedidos = [...pedidos, pedidoFeito];
 
@@ -51,15 +53,27 @@ function CardProduto() {
           <div className="informaçãoCardProduto">
             <h1 className="nomeCardProduto">{produto.nome}</h1>
             <h5 className="descricaoCardProduto">{produto.descricao}</h5>
-            <div>
-              <h1 className="" id={produto.preco}>{produto.preco}</h1>
+            <div >
+              <section classname="apresentacaoPreco">
+                <p classname="apresentacaoPreco">$ </p>
+                <h1 className="" id={produto.preco}>
+                  {produto.preco}
+                </h1>
+              </section>
+              <input
+                className="quantidadeProduto "
+                type="number"
+                min={0}
+                name=""
+                id={produto.idProduto}
+                onChange={handleChange}
+              />
               <button
-                className=""
+                className="botaoComprar"
                 onClick={() => addProduto(produto.idProduto, produto.preco)}
               >
                 Comprar
               </button>
-              <input type="number" min={0} name="" id={produto.idProduto} onChange={handleChange}/>
             </div>
           </div>
         </div>

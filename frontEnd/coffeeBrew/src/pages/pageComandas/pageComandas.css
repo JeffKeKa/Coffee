@@ -38,3 +38,46 @@
     justify-content: center;
     align-items: center;
 }
+.labelAddproduto{
+    color: #f2f2f2;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+  }
+  
+  /* Estilo para o cabeçalho da tabela */
+  thead {
+    background-color: #f2f2f2;
+  }
+  
+  /* Estilo para as células do cabeçalho */
+  th {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Estilo para as células da tabela */
+  td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Estilo alternativo para linhas */
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Estilo para o texto dentro das células */
+  td, th {
+    font-size: 14px;
+    color: #333;
+  }
+  
+  /* Estilo para a primeira coluna */
+  td:first-child, th:first-child {
+    padding-left: 20px;
+  }

@@ -8,6 +8,8 @@ import CardProdutoAdd from '../componentes/cardProdutoAdd/CardProdutoAdd'
 import PageLogin from '../pages/pageLogin/PageLogin'
 import CadastroCliente from '../pages/pageCadastroCliente/CadastroCliente'
 import PageLoginFuncionario from '../pages/pageLoginFuncionario/PageLoginFuncionario'
+import PageProdutoEdicao from '../pages/pageProdutoEdit/PageProdutoEdicao'
+
 
 const Routers= createBrowserRouter([
     {
@@ -27,7 +29,7 @@ const Routers= createBrowserRouter([
                 element:<PageComandas />
             },
             {
-                path:'/edicaoProdutos',
+                path:'/adicionarProduto',
                 element:<CardProdutoAdd />
             },
             {
@@ -41,6 +43,10 @@ const Routers= createBrowserRouter([
             {
                 path:'/cliente',
                 element:<CadastroCliente />
+            },
+            {
+                path:'/produtoEdicao',
+                element:<PageProdutoEdicao/>
             },
         ]
     }

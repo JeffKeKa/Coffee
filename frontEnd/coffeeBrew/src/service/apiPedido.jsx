@@ -24,7 +24,7 @@ const FinalizarPedidoComponent = () => {
     };
 
     return (
-        <button onClick={finalizarPedido}>Finalizar Pedido</button>
+        <button className="botoesPaginaMenu" onClick={finalizarPedido}>Finalizar Pedido</button>
     );
 };
 

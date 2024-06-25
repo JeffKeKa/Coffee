@@ -2,6 +2,10 @@ import React, { useState, useContext } from "react";
 import "./pageComandas.css";
 import axios from "axios";
 import { UsuarioContext } from "../../context/GlobalContext";
+import { CiCreditCard1 } from "react-icons/ci";
+import { AiFillProduct } from "react-icons/ai";
+import { MdOutlineProductionQuantityLimits } from "react-icons/md";
+import { MdAttachMoney } from "react-icons/md";
 
 function PageComandas() {
   const { comandas, setComandas } = useContext(UsuarioContext);
@@ -33,7 +37,7 @@ function PageComandas() {
           />
         </div>
         <form className="formularioPageComanda">
-          <label className="labelAddproduto">Informe numero da comanda:</label>
+          <label className="labelAddproduto">Informe numero da comanda: <CiCreditCard1 /></label>
           <input
             className="inputComanda"
             type="number"
@@ -58,9 +62,10 @@ function PageComandas() {
         <table>
           <thead>
             <tr>
-              <th>Produto</th>
-              <th>Quantidade</th>
-              <th>Preço</th>
+              <th>Produto <AiFillProduct /></th>
+              <th>Quantidade <MdOutlineProductionQuantityLimits />
+              </th>
+              <th>Preço <MdAttachMoney /></th>
             </tr>
           </thead>
           <tbody>

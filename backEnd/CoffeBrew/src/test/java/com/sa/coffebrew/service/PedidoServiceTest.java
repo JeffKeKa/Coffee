@@ -2,95 +2,147 @@
 //
 //import com.sa.coffebrew.entity.Comanda;
 //import com.sa.coffebrew.entity.Pedido;
+//import com.sa.coffebrew.entity.PedidoFront;
 //import com.sa.coffebrew.entity.Produto;
-//import com.sa.coffebrew.repository.ComandaRepository;
 //import com.sa.coffebrew.repository.PedidoRepository;
 //import com.sa.coffebrew.repository.ProdutoRepository;
+//import org.junit.jupiter.api.BeforeEach;
 //import org.junit.jupiter.api.Test;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.boot.test.context.SpringBootTest;
+//import org.springframework.transaction.annotation.Transactional;
 //
 //import java.util.ArrayList;
-//import java.util.Arrays;
 //import java.util.List;
 //import java.util.Optional;
 //
 //import static org.junit.jupiter.api.Assertions.*;
 //
 //@SpringBootTest
-//class PedidoServiceTest {
-//    @Autowired
-//    private ComandaRepository comandaRepository; 
-//    
+//@Transactional
+//public class PedidoServiceTest {
+//
 //    @Autowired
 //    private PedidoService pedidoService;
-//    
+//
 //    @Autowired
-//    private ProdutoService produtoService;
+//    private PedidoRepository pedidoRepository;
 //
 //    @Autowired
 //    private ProdutoRepository produtoRepository;
 //
-//    @Autowired
-//    private PedidoRepository pedidoRepository;
-//    
+//    private Pedido pedido;
+//    private Produto produto;
 //    private Comanda comanda;
-//    private Produto produto1;
-//    private Produto produto2;
-//    
-//    @Test
-//    void testIncluirPedido() {
-//        Optional<Comanda> optionalComanda = comandaRepository.findById(102L);
-//        comanda = optionalComanda.get();
-//        Pedido novoPedido = new Pedido();
-//        novoPedido.setQuantidade(3);
-//        novoPedido.setPrecoPedido(30.0);
-//        novoPedido.setStatusPedido("NOVO");
-//        novoPedido.setComanda(comanda);
 //
-//        Long idPedido = pedidoService.incluirPedido(novoPedido, 52L);
+//    @BeforeEach
+//    public void setUp() {
+//        produto = new Produto();
+//        produto.setNome("Produto Teste");
+//        produto.setPreco(100.0);
+//        produto = produtoRepository.save(produto);
+//
+//        comanda = new Comanda();
+//        comanda.setPrecoTotal(200.0);
+//        comanda.setStatus("ATIVO");
+//        comanda.setnComanda(101);
+//        comanda = comandaService.incluirComanda(comanda);
+//    }
+//
+//    @Test
+//    public void testIncluirPedido() {
+//        pedido = new Pedido();
+//        pedido.setQuantidade(2);
+//        pedido.setPrecoPedido(200.0);
+//        pedido.setStatusPedido("PENDENTE");
+//        pedido.setComanda(comanda);
+//
+//        Long idProduto = produto.getIdProduto();
+//        Long idPedido = pedidoService.incluirPedido(pedido, idProduto);
+//
 //        assertNotNull(idPedido);
-//    }
-//    @Test
-//    void testIncluirNovoPedido() {
-//        
-//        Optional<Produto> optionalProduto1 = produtoRepository.findById(2L);
-//        Optional<Produto> optionalProduto2 = produtoRepository.findById(52L);
-//        
-//        produto1 = optionalProduto1.get();
-//        produto2 = optionalProduto2.get();
-//        
-//        Pedido pedido1 = new Pedido();
-//        pedido1.setQuantidade(1);
-//        pedido1.setPrecoPedido(10.0);
-//        pedido1.setStatusPedido("NOVO");
-//        pedido1.setProduto(produto2);
+//        assertTrue(idPedido > 0);
 //
-//        Pedido pedido2 = new Pedido();
-//        pedido2.setQuantidade(2);
-//        pedido2.setPrecoPedido(20.0);
-//        pedido2.setStatusPedido("NOVO");
-//        pedido2.setProduto(produto1);
-//
-//       List<Pedido> pedidos = Arrays.asList(pedido1, pedido2);
-//       
-//        Boolean result = pedidoService.incluirNovoPedido(pedidos, 124);
-//        assertTrue(result);
-//    }
-//    
-//    @Test
-//    void testExcluirPedido() {
-//        
-//        Boolean result = pedidoService.excluirPedido(402L);
-//        assertTrue(result);
-//        
-//    }
-//    
-//    @Test
-//    void testConsultarPedido() {
-//    
-//        
-//        
+//        Optional<Pedido> pedidoSalvo = pedidoService.consultarPedido(idPedido);
+//        assertTrue(pedidoSalvo.isPresent());
+//        assertEquals(2, pedidoSalvo.get().getQuantidade());
+//        assertEquals(200.0, pedidoSalvo.get().getPrecoPedido());
+//        assertEquals("PENDENTE", pedidoSalvo.get().getStatusPedido());
+//        assertEquals(comanda.getIdComanda(), pedidoSalvo.get().getComanda().getIdComanda());
+//        assertEquals(produto.getIdProduto(), pedidoSalvo.get().getProduto().getIdProduto());
 //    }
 //
+//    @Test
+//    public void testIncluirNovoPedido() {
+//        PedidoFront pedidoFront = new PedidoFront();
+//        pedidoFront.setQuantidade(3);
+//        pedidoFront.setPrecoPedido(300.0);
+//        pedidoFront.setStatusPedido("CONFIRMADO");
+//        pedidoFront.setIdProduto(produto.getIdProduto());
+//
+//        List<PedidoFront> pedidos = new ArrayList<>();
+//        pedidos.add(pedidoFront);
+//
+//        Boolean pedidoIncluido = pedidoService.incluirNovoPedido(pedidos, comanda.getnComanda());
+//        assertTrue(pedidoIncluido);
+//
+//        List<Pedido> pedidosComanda = pedidoService.listarPedidos();
+//        assertFalse(pedidosComanda.isEmpty());
+//        assertEquals(1, pedidosComanda.size());
+//
+//        Pedido pedidoSalvo = pedidosComanda.get(0);
+//        assertEquals(3, pedidoSalvo.getQuantidade());
+//        assertEquals(300.0, pedidoSalvo.getPrecoPedido());
+//        assertEquals("CONFIRMADO", pedidoSalvo.getStatusPedido());
+//        assertEquals(comanda.getIdComanda(), pedidoSalvo.getComanda().getIdComanda());
+//        assertEquals(produto.getIdProduto(), pedidoSalvo.getProduto().getIdProduto());
+//    }
+//
+//    @Test
+//    public void testExcluirPedido() {
+//        pedido = new Pedido();
+//        pedido.setQuantidade(2);
+//        pedido.setPrecoPedido(200.0);
+//        pedido.setStatusPedido("PENDENTE");
+//        pedido.setComanda(comanda);
+//
+//        Long idProduto = produto.getIdProduto();
+//        Long idPedido = pedidoService.incluirPedido(pedido, idProduto);
+//
+//        assertNotNull(idPedido);
+//
+//        Boolean pedidoExcluido = pedidoService.excluirPedido(idPedido);
+//        assertTrue(pedidoExcluido);
+//
+//        Optional<Pedido> pedidoExcluidoConsulta = pedidoService.consultarPedido(idPedido);
+//        assertFalse(pedidoExcluidoConsulta.isPresent());
+//    }
+//
+//    @Test
+//    public void testAtualizarPedido() {
+//        pedido = new Pedido();
+//        pedido.setQuantidade(2);
+//        pedido.setPrecoPedido(200.0);
+//        pedido.setStatusPedido("PENDENTE");
+//        pedido.setComanda(comanda);
+//
+//        Long idProduto = produto.getIdProduto();
+//        Long idPedido = pedidoService.incluirPedido(pedido, idProduto);
+//
+//        assertNotNull(idPedido);
+//
+//        pedido = pedidoService.consultarPedido(idPedido).orElseThrow();
+//
+//        pedido.setQuantidade(5);
+//        pedido.setPrecoPedido(500.0);
+//        pedido.setStatusPedido("CONFIRMADO");
+//
+//        Boolean pedidoAtualizado = pedidoService.atualizarPedido(pedido, idProduto);
+//        assertTrue(pedidoAtualizado);
+//
+//        Pedido pedidoAtualizadoConsulta = pedidoService.consultarPedido(idPedido).orElseThrow();
+//        assertEquals(5, pedidoAtualizadoConsulta.getQuantidade());
+//        assertEquals(500.0, pedidoAtualizadoConsulta.getPrecoPedido());
+//        assertEquals("CONFIRMADO", pedidoAtualizadoConsulta.getStatusPedido());
+//    }
 //}

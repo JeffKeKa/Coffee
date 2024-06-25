@@ -9,6 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 
@@ -40,15 +41,33 @@ public class ClienteServiceTest {
     @AfterAll
     public static void tearDownClass() {
     }
+    
+    public static String gerarNumeroDe11Digitos() {
+        Random random = new Random();
+        StringBuilder numero = new StringBuilder();
+
+        for (int i = 0; i < 11; i++) {
+            int digito = random.nextInt(10); // Gera um número entre 0 e 9
+            numero.append(digito);
+        }
+
+        return numero.toString();
+    }
 
     @BeforeEach
     void setUp() {
+        
         cliente = new Cliente();
         cliente.setNome("aaa");
         cliente.setCelular(123456789L);
-        cliente.setSenha("123");
-        cliente.setCpf("987654321L");
+        cliente.setSenha(gerarNumeroDe11Digitos());
+        cliente.setCpf(gerarNumeroDe11Digitos());
         cliente.setEmail("teste@exemplo.com");
+        
+        String senhaCli = cliente.getSenha();
+        cliente.setSenha(clienteService.codificarSenhaCliente(senhaCli));
+        
+        
         clienteRepository.save(cliente);
     }
     
@@ -64,7 +83,7 @@ public class ClienteServiceTest {
         novoCliente.setNome("aaa");
         novoCliente.setSenha("123");
         novoCliente.setCelular(123456780L);
-        novoCliente.setCpf("987654320L");
+        novoCliente.setCpf(gerarNumeroDe11Digitos());
         novoCliente.setEmail("a@exemplo.com");
 
         Long idCliente = clienteService.incluirCliente(novoCliente);
@@ -112,7 +131,18 @@ public class ClienteServiceTest {
     @Order(6)
     void testLoginCliente(){
         System.out.println("teste de login de cliente");
-        Cliente result = clienteService.loginCliente("987654320L", "123456");
+        Cliente novoCliente = new Cliente();
+        novoCliente.setNome("aaa");
+        novoCliente.setSenha("123");
+        novoCliente.setCelular(123456780L);
+        novoCliente.setCpf(gerarNumeroDe11Digitos());
+        novoCliente.setEmail("a@exemplo.com");
+
+        clienteService.incluirCliente(novoCliente);
+        
+        System.out.println(novoCliente.getCpf() + novoCliente.getSenha());
+        
+        Cliente result = clienteService.loginCliente(novoCliente.getCpf(), novoCliente.getSenha());
         assertNotNull(result);
         
     }
@@ -154,7 +184,7 @@ public class ClienteServiceTest {
         novoClienteComCpfPequeno.setSenha("123");
         novoClienteComCpfPequeno.setCelular(123456780L);
         novoClienteComCpfPequeno.setEmail("a@exemplo.com");
-        novoClienteComCpfPequeno.setCpf("1234567891011");
+        novoClienteComCpfPequeno.setCpf("123456789");
     
         Long idCliente = clienteService.incluirCliente(novoClienteComCpfPequeno);
         Long expResult = null;
@@ -169,7 +199,7 @@ public class ClienteServiceTest {
         novoClienteSemNome.setSenha("123");
         novoClienteSemNome.setCelular(123456780L);
         novoClienteSemNome.setEmail("a@exemplo.com");
-        novoClienteSemNome.setCpf("aaa");
+        novoClienteSemNome.setCpf(gerarNumeroDe11Digitos());
     
         Long idCliente = clienteService.incluirCliente(novoClienteSemNome);
         Long expResult = null;
@@ -178,13 +208,13 @@ public class ClienteServiceTest {
     
     @Test
     void testIncluirClienteSemEmail(){
-    System.out.println("teste de incluir cliente sem cpf");
+    System.out.println("teste de incluir cliente sem email");
         Cliente novoClienteSemEmail = new Cliente();
         novoClienteSemEmail.setNome("a");
         novoClienteSemEmail.setSenha("123");
         novoClienteSemEmail.setCelular(123456780L);
         novoClienteSemEmail.setEmail(null);
-        novoClienteSemEmail.setCpf("aaa");
+        novoClienteSemEmail.setCpf(gerarNumeroDe11Digitos());
     
         Long idCliente = clienteService.incluirCliente(novoClienteSemEmail);
         Long expResult = null;
@@ -193,13 +223,13 @@ public class ClienteServiceTest {
     
     @Test
     void testIncluirClienteSemSenha(){
-    System.out.println("teste de incluir cliente sem cpf");
+    System.out.println("teste de incluir cliente sem senha");
         Cliente novoClienteSemSenha = new Cliente();
         novoClienteSemSenha.setNome("aaa");
         novoClienteSemSenha.setSenha(null);
         novoClienteSemSenha.setCelular(123456780L);
         novoClienteSemSenha.setEmail("a@exemplo.com");
-        novoClienteSemSenha.setCpf("aa");
+        novoClienteSemSenha.setCpf(gerarNumeroDe11Digitos());
     
         Long idCliente = clienteService.incluirCliente(novoClienteSemSenha);
         Long expResult = null;
@@ -208,16 +238,21 @@ public class ClienteServiceTest {
     
     @Test
     void testIncluirClienteSemCelular(){
-    System.out.println("teste de incluir cliente sem cpf");
+    System.out.println("teste de incluir cliente sem celular");
         Cliente novoClienteSemCelular = new Cliente();
         novoClienteSemCelular.setNome("aaa");
         novoClienteSemCelular.setSenha("123");
         novoClienteSemCelular.setCelular(null);
         novoClienteSemCelular.setEmail("a@exemplo.com");
-        novoClienteSemCelular.setCpf("aaa");
+        novoClienteSemCelular.setCpf(gerarNumeroDe11Digitos());
     
         Long idCliente = clienteService.incluirCliente(novoClienteSemCelular);
         Long expResult = null;
         assertEquals(expResult, idCliente);
     }
+    
+    
+    
+    
+    
 }

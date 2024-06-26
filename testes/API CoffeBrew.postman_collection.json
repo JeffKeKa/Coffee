@@ -1,0 +1,481 @@
+{
+	"info": {
+		"_postman_id": "b942e633-e182-4940-8c07-b7f4de7585f4",
+		"name": "API CoffeBrew",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33302305"
+	},
+	"item": [
+		{
+			"name": "Produto",
+			"item": [
+				{
+					"name": "Endpoint listarProdutos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"nome\": \"a\",\r\n    \"preco\": 1.32,\r\n    \"descricao\": \"a\",\r\n    \"tipo\": \"cafe\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/coffebrew/produto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"coffebrew",
+								"produto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Endpoint incluirProduto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"nome\": \"a\",\r\n\"preco\": 1.32,\r\n\"descricao\": \"a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/coffebrew/produto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"coffebrew",
+								"produto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Endpoint consultarProduto",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/coffebrew/produto/152",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"coffebrew",
+								"produto",
+								"152"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Endpoint excluirProduto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/coffebrew/produto/102",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"coffebrew",
+								"produto",
+								"102"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "Endpoint loginCliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"cpf\": \"987654320\",\r\n\"senha\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/coffebrew/cliente/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"coffebrew",
+								"cliente",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Endpoint incluirCliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"cpf\": \"12345678918\",\r\n\"senha\": \"123456\",\r\n\"email\": \"aaaa@aaa\",\r\n\"nome\": \"aaa\",\r\n\"celular\": 123515132\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/coffebrew/cliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"coffebrew",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Endpoint listarClientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/coffebrew/cliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"coffebrew",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Endpoint excluirCliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/coffebrew/cliente/602",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"coffebrew",
+								"cliente",
+								"602"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Endpoint consultarCliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/coffebrew/cliente/502",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"coffebrew",
+								"cliente",
+								"502"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Funcionario",
+			"item": [
+				{
+					"name": "Endpoint incluirFuncionario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"perfil\": \"admin\",\r\n\"nome\": \"B\",\r\n\"cpf\": \"12345678962\",\r\n\"email\": \"bb@bb\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/coffebrew/funcionario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"coffebrew",
+								"funcionario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Endpoint listarFuncionarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/coffebrew/funcionario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"coffebrew",
+								"funcionario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Endpoint excluirFuncionario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/coffebrew/funcionario/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"coffebrew",
+								"funcionario",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Endpoint consultarFuncionario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/coffebrew/funcionario/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"coffebrew",
+								"funcionario",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedido",
+			"item": [
+				{
+					"name": "Endpoint Pedido",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comanda",
+			"item": [
+				{
+					"name": "Endpoint incluirComanda",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"precoTotal\": 123.30,\r\n\"status\": \"ATIVO\",\r\n\"nComanda\": 313\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/coffebrew/comanda",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"coffebrew",
+								"comanda"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Endpoint listarComandas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/coffebrew/comanda",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"coffebrew",
+								"comanda"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Endpoint consultarComanda",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/coffebrew/comanda",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"coffebrew",
+								"comanda"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Endpoin excluirComanda",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/coffebrew/comanda",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"coffebrew",
+								"comanda"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Endpoint consultarComandaPorNumero",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/coffebrew/comanda/numero/313",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"coffebrew",
+								"comanda",
+								"numero",
+								"313"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

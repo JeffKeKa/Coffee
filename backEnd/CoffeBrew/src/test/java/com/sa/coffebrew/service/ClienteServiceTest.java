@@ -142,7 +142,7 @@ public class ClienteServiceTest {
         
         System.out.println(novoCliente.getCpf() + novoCliente.getSenha());
         
-        Cliente result = clienteService.loginCliente(novoCliente.getCpf(), novoCliente.getSenha());
+        Cliente result = clienteService.loginCliente(novoCliente.getCpf(), 123);
         assertNotNull(result);
         
     }

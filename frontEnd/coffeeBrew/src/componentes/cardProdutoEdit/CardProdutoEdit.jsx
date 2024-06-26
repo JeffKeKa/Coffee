@@ -68,7 +68,9 @@ function CardProdutoEdit() {
         <h2>Editar Produto</h2>
         <label htmlFor="pesquisarProduto">Pesquisar por ID:</label>
         <input
+        
           type="text"
+           className="letraBlack inputFormAddProduto"
           id="pesquisarProduto"
           value={idProduto}
           onChange={(e) => setIdProduto(e.target.value)}

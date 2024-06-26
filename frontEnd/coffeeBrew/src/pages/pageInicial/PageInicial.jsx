@@ -37,7 +37,7 @@ function PageInicial() {
             Pagamento
           </Link>
           <Link to="/produtoEdicao" className="botoesPageInicial">
-            Idição Produtos
+            Produtos
           </Link>
 
           <Link to="/login" className="botoesPageInicial">

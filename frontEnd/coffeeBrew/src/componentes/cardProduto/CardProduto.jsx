@@ -55,7 +55,7 @@ function CardProduto() {
             <h5 className="descricaoCardProduto">{produto.descricao}</h5>
             <div >
               <section classname="apresentacaoPreco">
-                <p classname="apresentacaoPreco">$ </p>
+               
                 <h1 className="" id={produto.preco}>
                   {produto.preco}
                 </h1>

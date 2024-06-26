@@ -7,7 +7,7 @@ import "./pageProdutoEdicao.css"
 function PageProdutoEdicao() {
   return (
     <div className="pageProdutoEditar">
-<div className="barraLateralPageInicial">
+<div className="barraLateralPageEdicao">
        
        <div>
          <img

@@ -1,0 +1,630 @@
+{
+  "id": "4ade26cd-8590-4c3f-8e1d-95712aab48c7",
+  "version": "2.0",
+  "name": "CoffeeBrew",
+  "url": "http://localhost:5173",
+  "tests": [{
+    "id": "574e547f-47d4-49af-bba9-4bf6b76c0dc5",
+    "name": "Adicionar Produto",
+    "commands": [{
+      "id": "365a34f5-cce3-483b-ab90-12f03793971b",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5f530d0f-4544-4ca9-8e8b-1102505b28fb",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "778x821",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7ffd8149-7897-49f3-94c5-fce46025b274",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Produtos",
+      "targets": [
+        ["linkText=Produtos", "linkText"],
+        ["css=.botoesPageInicial:nth-child(4)", "css:finder"],
+        ["xpath=//a[contains(text(),'Produtos')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/produtoEdicao')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Produtos')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "71c6abde-d206-498a-abdb-2f2c63f3aa71",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Adicionar produto",
+      "targets": [
+        ["linkText=Adicionar produto", "linkText"],
+        ["css=.botoesPageInicial:nth-child(4)", "css:finder"],
+        ["xpath=//a[contains(text(),'Adicionar produto')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/adicionarProduto')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Adicionar produto')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "46c0be37-c4d1-4f4d-8747-0503701668a5",
+      "comment": "",
+      "command": "click",
+      "target": "name=nome",
+      "targets": [
+        ["name=nome", "name"],
+        ["css=.inputFormAddProduto:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='nome']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "384e592e-8101-44f0-8925-f8368f239b1b",
+      "comment": "",
+      "command": "type",
+      "target": "name=nome",
+      "targets": [
+        ["name=nome", "name"],
+        ["css=.inputFormAddProduto:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='nome']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Café Espresso"
+    }, {
+      "id": "3c8a4a2c-2058-455b-8d6b-5229361960b5",
+      "comment": "",
+      "command": "click",
+      "target": "name=preco",
+      "targets": [
+        ["name=preco", "name"],
+        ["css=.inputFormAddProduto:nth-child(4)", "css:finder"],
+        ["xpath=//input[@name='preco']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9704739a-8ea7-4d7f-9fe0-0d07fe6f955d",
+      "comment": "",
+      "command": "type",
+      "target": "name=preco",
+      "targets": [
+        ["name=preco", "name"],
+        ["css=.inputFormAddProduto:nth-child(4)", "css:finder"],
+        ["xpath=//input[@name='preco']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "5.00"
+    }, {
+      "id": "81e59145-f98e-47ca-b857-6569fa715a92",
+      "comment": "",
+      "command": "click",
+      "target": "name=descricao",
+      "targets": [
+        ["name=descricao", "name"],
+        ["css=.inputFormAddProduto:nth-child(6)", "css:finder"],
+        ["xpath=//textarea[@name='descricao']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "22c222a9-b1c3-415a-b3ed-ae08f0c969ca",
+      "comment": "",
+      "command": "type",
+      "target": "name=descricao",
+      "targets": [
+        ["name=descricao", "name"],
+        ["css=.inputFormAddProduto:nth-child(6)", "css:finder"],
+        ["xpath=//textarea[@name='descricao']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Um café forte feito na hora"
+    }, {
+      "id": "c1a9abb9-1bf2-4a5f-a4fa-98b989e7fec5",
+      "comment": "",
+      "command": "click",
+      "target": "name=imgURL",
+      "targets": [
+        ["name=imgURL", "name"],
+        ["css=.inputFormAddProduto:nth-child(8)", "css:finder"],
+        ["xpath=//input[@name='imgURL']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "214037af-6ab3-401b-9374-09518d595c18",
+      "comment": "",
+      "command": "click",
+      "target": "css=.BotaoCadastrarProduto",
+      "targets": [
+        ["css=.BotaoCadastrarProduto", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Cadastrar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b9896366-2c7f-4ac0-b698-3b669158fd7a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.produtoAddPage",
+      "targets": [
+        ["css=.produtoAddPage", "css:finder"],
+        ["xpath=//div[@id='root']/div", "xpath:idRelative"],
+        ["xpath=//div/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "9c5f10dc-0ba8-45d9-bcde-2f243c33203e",
+    "name": "Editar Produto",
+    "commands": [{
+      "id": "4e9238da-73a9-411d-8e69-9f1cbcae4e1d",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f69df18b-2cd7-4fa7-9b44-1234b5776010",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "854x628",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "20aed9e5-5add-4503-a35b-a3022890b8ca",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Produtos",
+      "targets": [
+        ["linkText=Produtos", "linkText"],
+        ["css=.botoesPageInicial:nth-child(4)", "css:finder"],
+        ["xpath=//a[contains(text(),'Produtos')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/produtoEdicao')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Produtos')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "902650b2-6b19-4ff6-b0c4-243af3bf2e0a",
+      "comment": "",
+      "command": "click",
+      "target": "id=pesquisarProduto",
+      "targets": [
+        ["id=pesquisarProduto", "id"],
+        ["css=#pesquisarProduto", "css:finder"],
+        ["xpath=//input[@id='pesquisarProduto']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "107b3429-4450-4037-b829-077ef4477be6",
+      "comment": "",
+      "command": "type",
+      "target": "id=pesquisarProduto",
+      "targets": [
+        ["id=pesquisarProduto", "id"],
+        ["css=#pesquisarProduto", "css:finder"],
+        ["xpath=//input[@id='pesquisarProduto']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "2"
+    }, {
+      "id": "f7d6979c-047b-452a-9ada-b80d5fc26237",
+      "comment": "",
+      "command": "click",
+      "target": "css=.buttonProcurarProduto",
+      "targets": [
+        ["css=.buttonProcurarProduto", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Pesquisar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6ec44ffd-fdb7-4ff0-a4bd-f66b4e8664b3",
+      "comment": "",
+      "command": "click",
+      "target": "name=nome",
+      "targets": [
+        ["name=nome", "name"],
+        ["css=.letraBlack:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='nome']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/form/input", "xpath:idRelative"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f289901-cff9-4794-ac49-731f1de1d3ba",
+      "comment": "",
+      "command": "type",
+      "target": "name=nome",
+      "targets": [
+        ["name=nome", "name"],
+        ["css=.letraBlack:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='nome']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/form/input", "xpath:idRelative"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": "Cold brew"
+    }, {
+      "id": "cd61c062-9e76-4e24-8b29-8185f1a90818",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "name=preco",
+      "targets": [
+        ["name=preco", "name"],
+        ["css=.inputFormAddProduto:nth-child(4)", "css:finder"],
+        ["xpath=//input[@name='preco']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "3.2166748046875,27.333328247070312"
+    }, {
+      "id": "78217e1e-ecb1-4420-9249-2790a5561424",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "name=preco",
+      "targets": [
+        ["name=preco", "name"],
+        ["css=.inputFormAddProduto:nth-child(4)", "css:finder"],
+        ["xpath=//input[@name='preco']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "3.2166748046875,27.333328247070312"
+    }, {
+      "id": "2c9d44f8-a70b-4ac3-a9fe-9f6d4ec38b90",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "name=preco",
+      "targets": [
+        ["name=preco", "name"],
+        ["css=.inputFormAddProduto:nth-child(4)", "css:finder"],
+        ["xpath=//input[@name='preco']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "3.2166748046875,27.333328247070312"
+    }, {
+      "id": "f1315bc3-4852-4b6c-bd9f-806ee03ece07",
+      "comment": "",
+      "command": "click",
+      "target": "name=preco",
+      "targets": [
+        ["name=preco", "name"],
+        ["css=.inputFormAddProduto:nth-child(4)", "css:finder"],
+        ["xpath=//input[@name='preco']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6c2e0f48-9c88-4284-86fb-629b23c3cf62",
+      "comment": "",
+      "command": "type",
+      "target": "name=preco",
+      "targets": [
+        ["name=preco", "name"],
+        ["css=.inputFormAddProduto:nth-child(4)", "css:finder"],
+        ["xpath=//input[@name='preco']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "5.00"
+    }, {
+      "id": "38d0bb70-78aa-435e-b505-132f8ec02118",
+      "comment": "",
+      "command": "click",
+      "target": "name=descricao",
+      "targets": [
+        ["name=descricao", "name"],
+        ["css=.letraBlack:nth-child(6)", "css:finder"],
+        ["xpath=//textarea[@name='descricao']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f185298-b11f-4149-8948-87bc34ee0e54",
+      "comment": "",
+      "command": "type",
+      "target": "name=descricao",
+      "targets": [
+        ["name=descricao", "name"],
+        ["css=.letraBlack:nth-child(6)", "css:finder"],
+        ["xpath=//textarea[@name='descricao']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/form/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Café preparado a frio, Ideal para dias quentes"
+    }, {
+      "id": "7dca73c8-f181-481c-97c0-03edb8a1e43a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.BotaoCadastrarProduto",
+      "targets": [
+        ["css=.BotaoCadastrarProduto", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Editar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "83cfd097-9216-4f8c-96b4-4d9812c01d08",
+    "name": "Deletar Produto",
+    "commands": [{
+      "id": "e5c7508c-3db8-4e27-bd3c-50e75615bf0b",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "316333ba-0bb8-4420-a503-711f87df3c23",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "854x628",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "84ec0d65-7854-459a-b6e4-ebc0f249f37c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Produtos",
+      "targets": [
+        ["linkText=Produtos", "linkText"],
+        ["css=.botoesPageInicial:nth-child(4)", "css:finder"],
+        ["xpath=//a[contains(text(),'Produtos')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/produtoEdicao')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Produtos')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6888389a-bec2-40a2-92dc-55c1a6c19bbc",
+      "comment": "",
+      "command": "click",
+      "target": "id=pesquisarProduto",
+      "targets": [
+        ["id=pesquisarProduto", "id"],
+        ["css=#pesquisarProduto", "css:finder"],
+        ["xpath=//input[@id='pesquisarProduto']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d8580197-d4aa-4e5d-b79d-e50172dae8e2",
+      "comment": "",
+      "command": "type",
+      "target": "id=pesquisarProduto",
+      "targets": [
+        ["id=pesquisarProduto", "id"],
+        ["css=#pesquisarProduto", "css:finder"],
+        ["xpath=//input[@id='pesquisarProduto']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "4474609b-2817-40af-a8c9-379c4bc9999a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.buttonProcurarProduto",
+      "targets": [
+        ["css=.buttonProcurarProduto", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Pesquisar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "73de364b-27b0-4e36-be41-a6850b5f090e",
+      "comment": "",
+      "command": "click",
+      "target": "css=button:nth-child(12)",
+      "targets": [
+        ["css=button:nth-child(12)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div/form/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Deletar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "0b8a3e7e-f5cc-4e3e-b4e6-450fcca75483",
+    "name": "Menu e Finalizar pedido",
+    "commands": [{
+      "id": "ad4c3883-01ec-42ba-9279-1633bda588a7",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "35a7fcf2-e4d3-40fd-b640-902fc6c5d7c6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1550x830",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "19ef1329-0b6c-4d32-b3c3-7defc0973880",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Menu",
+      "targets": [
+        ["linkText=Menu", "linkText"],
+        ["css=.botoesPageInicial:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Menu')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Menu')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Menu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4780cda0-7d4b-4a71-96ab-f20549210122",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.botoesPaginaMenu:nth-child(3)",
+      "targets": [
+        ["css=.botoesPaginaMenu:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Bebidas ')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "47a33e90-760e-4475-a96d-c0be7d3ffa5f",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.botoesPaginaMenu:nth-child(3)",
+      "targets": [
+        ["css=.botoesPaginaMenu:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Bebidas ')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "76e5c545-4958-4712-9f48-c7e477a57691",
+      "comment": "",
+      "command": "type",
+      "target": "id=2",
+      "targets": [
+        ["id=2", "id"],
+        ["css=#\\32", "css:finder"],
+        ["xpath=//input[@id='2']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "3ba823c2-012a-4490-af78-70f89a05c9aa",
+      "comment": "",
+      "command": "click",
+      "target": "id=2",
+      "targets": [
+        ["id=2", "id"],
+        ["css=#\\32", "css:finder"],
+        ["xpath=//input[@id='2']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6c4ecd03-48b4-4460-a44c-1e4116d45de5",
+      "comment": "",
+      "command": "type",
+      "target": "id=2",
+      "targets": [
+        ["id=2", "id"],
+        ["css=#\\32", "css:finder"],
+        ["xpath=//input[@id='2']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "2"
+    }, {
+      "id": "45d15845-4956-44ad-bb5c-008f70b39fa6",
+      "comment": "",
+      "command": "click",
+      "target": "id=2",
+      "targets": [
+        ["id=2", "id"],
+        ["css=#\\32", "css:finder"],
+        ["xpath=//input[@id='2']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "64d156a9-8a8f-43bb-b808-5e15bf424937",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=2",
+      "targets": [
+        ["id=2", "id"],
+        ["css=#\\32", "css:finder"],
+        ["xpath=//input[@id='2']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "eeb59106-f6bc-4008-8103-315fe056e34d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.cardProdutoMenu:nth-child(2) .botaoComprar",
+      "targets": [
+        ["css=.cardProdutoMenu:nth-child(2) .botaoComprar", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div[2]/div/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2f08d2eb-b2ef-4c62-a18b-58be4d69ed89",
+      "comment": "",
+      "command": "answerOnNextPrompt",
+      "target": "33",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3dc00908-266d-4cc5-916c-f74516b7c908",
+      "comment": "",
+      "command": "click",
+      "target": "css=.botoesPaginaMenu:nth-child(8)",
+      "targets": [
+        ["css=.botoesPaginaMenu:nth-child(8)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/button[5]", "xpath:idRelative"],
+        ["xpath=//button[5]", "xpath:position"],
+        ["xpath=//button[contains(.,'Finalizar Pedido')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "87bd8845-fded-40dc-822a-f4980ce77bed",
+      "comment": "",
+      "command": "assertPrompt",
+      "target": "Informe comanda",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7d2a54ba-c2b7-4fa9-879c-06a0751ca0e9",
+      "comment": "",
+      "command": "webdriverAnswerOnVisiblePrompt",
+      "target": "33",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "8c6a3de6-4339-4f21-97f6-b558900be7cd",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost:5173/"],
+  "plugins": []
+}

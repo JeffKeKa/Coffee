@@ -46,7 +46,7 @@ function CardProduto() {
       {produtos.map((produto) => (
         <div key={produto.idProduto} className="cardProdutoMenu">
           <img
-            src="./imagensProduto/imagensCafe/produtoCafeAmericano.jpg"
+            src={`./imagensProduto/imagensCafe/${produto.imgURL}.jpg`}
             className="imagemCardProduto"
             alt={produto.nome}
           />
@@ -55,9 +55,9 @@ function CardProduto() {
             <h5 className="descricaoCardProduto">{produto.descricao}</h5>
             <div >
               <section classname="apresentacaoPreco">
-               
+          
                 <h1 className="" id={produto.preco}>
-                  {produto.preco}
+                 {produto.preco}
                 </h1>
               </section>
               <input

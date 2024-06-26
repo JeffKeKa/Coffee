@@ -131,7 +131,7 @@ function CardProdutoEdit() {
           <button className="letraBlack BotaoCadastrarProduto" type="submit">
             Editar
           </button>
-          <button onClick={deletarProduto}>Deletar</button>
+          <button className="letraBlack buttonDeleteProduto" onClick={deletarProduto}>Deletar</button>
         </form>
       </div>
     </div>
